@@ -26,10 +26,10 @@ jobs:
 
       - name: build with Cmake
         run: |
-	     cd testActions
+             cd testActions
              mkdir build
              cd build
              cmake ..
              make
-	     ls
-	     ./hello
+             ls
+             ./hello
