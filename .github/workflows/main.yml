@@ -9,22 +9,36 @@ on:
 jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.8]
+	
+	
     steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+	
+      - name: Install conan and python dependencies
+        run: |
+             python -m pip install --upgrade pip
+	     pip install conan
+             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: checkout repo
         run: |
              git clone https://github.com/fmckenna/testActions.git
 
-      - name: build with gcc
+      - name: build with gcc & run
         run: |
              cd testActions
              gcc main.cpp
              ./a.out
 
 
-      - name: build with Cmake
+      - name: build with Cmake & run
         run: |
              cd testActions
              mkdir build
