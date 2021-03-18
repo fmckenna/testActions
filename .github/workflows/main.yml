@@ -20,6 +20,8 @@ jobs:
 
       - name: build with gcc
         run: |
+             ls
+             pwd
              gcc main.cpp
              ./a.out
 
