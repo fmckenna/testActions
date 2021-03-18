@@ -13,9 +13,21 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - name: Run a multi-line script
+      - name: checkout repo
         run: |
              git clone https://github.com/fmckenna/testActions.git
              cd testActions
+
+      - name: build with gcc
+        run: |
              gcc main.cpp
              ./a.out
+
+
+      - name: build with Cmake
+        run: |
+             mkdir build
+	     cd build
+             cmake ..
+	     make
+	     
