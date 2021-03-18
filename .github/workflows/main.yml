@@ -16,23 +16,20 @@ jobs:
       - name: checkout repo
         run: |
              git clone https://github.com/fmckenna/testActions.git
-             ls
-             pwd	     	     
-             cd testActions
-             ls
-             pwd	     
 
       - name: build with gcc
         run: |
-             ls
-             pwd
+             cd testActions
              gcc main.cpp
              ./a.out
 
 
       - name: build with Cmake
         run: |
+	     cd testActions
              mkdir build
              cd build
              cmake ..
              make
+	     ls
+	     ./hello
