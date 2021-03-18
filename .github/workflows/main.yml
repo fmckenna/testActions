@@ -30,4 +30,3 @@ jobs:
              cd build
              cmake ..
              make
-	     
