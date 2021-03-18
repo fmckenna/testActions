@@ -16,7 +16,11 @@ jobs:
       - name: checkout repo
         run: |
              git clone https://github.com/fmckenna/testActions.git
+             ls
+             pwd	     	     
              cd testActions
+             ls
+             pwd	     
 
       - name: build with gcc
         run: |
