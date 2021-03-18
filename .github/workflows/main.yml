@@ -26,6 +26,12 @@ jobs:
              pip install conan
              if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      - name: build qt using conan
+        run: |
+             conan user
+             conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+             conan install qt/5.15.2@bincrafters/stable -o qt:qt3d=True -o qt:qtcharts=True -o qt:qttools=True -g virtualrunenv --build missing
+
       - name: checkout repo
         run: |
              git clone https://github.com/fmckenna/testActions.git
