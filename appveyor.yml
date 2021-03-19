@@ -1,0 +1,22 @@
+version: 1.0.{build}
+
+image:
+  - Ubuntu1804
+  - macos
+
+matrix:
+     only:
+       - image: Ubuntu1804
+
+     clone_folder: ~/test
+
+    install:
+      - sh: git clone https://github.com/fmckenna/testActions.git
+
+    build_script:
+      - sh: cd testActions
+      - sh: gcc main.cpp
+
+    test_script:
+      - sh: ls
+      - sh: ./a.out
