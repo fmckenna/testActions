@@ -2,7 +2,17 @@ version: 1.0.{build}
 
 image:
   - Ubuntu1804
-  - macos
+  - macOS
+  - Visual Studio 2019
+
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      MY_VAR: value1
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      $HOME/Qt/5.15.2/gcc_64/bin
+    - APPVEYOR_BUILD_WORKER_IMAGE: macOS
+      MY_VAR: value4
 
 for:
   # Ubuntu (AppImage)
@@ -12,6 +22,9 @@ for:
         - image: Ubuntu1804
 
     clone_folder: ~/test
+
+    init:
+       - sh: export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
 
     install:
        - sh: git clone https://github.com/fmckenna/testActions.git
