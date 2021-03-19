@@ -4,9 +4,12 @@ image:
   - Ubuntu1804
   - macos
 
-matrix:
-     only:
-       - image: Ubuntu1804
+for
+  # Ubuntu image
+  -
+     matrix:
+       only:
+         - image: Ubuntu1804
 
      clone_folder: ~/test
 
