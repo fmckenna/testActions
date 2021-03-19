@@ -4,22 +4,22 @@ image:
   - Ubuntu1804
   - macos
 
-for
-  # Ubuntu image
+for:
+  # Ubuntu (AppImage)
   -
-     matrix:
-       only:
-         - image: Ubuntu1804
+    matrix:
+      only:
+        - image: Ubuntu1804
 
-     clone_folder: ~/test
+    clone_folder: ~/test
 
-     install:
+    install:
        - sh: git clone https://github.com/fmckenna/testActions.git
 
-     build_script:
+    build_script:
        - sh: cd testActions
        - sh: gcc main.cpp
 
-     test_script:
+    test_script:
        - sh: ls
        - sh: ./a.out
