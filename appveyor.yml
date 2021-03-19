@@ -10,13 +10,13 @@ matrix:
 
      clone_folder: ~/test
 
-    install:
-      - sh: git clone https://github.com/fmckenna/testActions.git
+     install:
+       - sh: git clone https://github.com/fmckenna/testActions.git
 
-    build_script:
-      - sh: cd testActions
-      - sh: gcc main.cpp
+     build_script:
+       - sh: cd testActions
+       - sh: gcc main.cpp
 
-    test_script:
-      - sh: ls
-      - sh: ./a.out
+     test_script:
+       - sh: ls
+       - sh: ./a.out

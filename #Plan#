@@ -1,0 +1,64 @@
+A Cybersecurity Event means any act or attempt, successful or unsuccessful, to gain unauthorized access to, disrupt, or misuse the systems or information stored on such systems. Cybersecurity is critically important to the SimCenter as tampering with the applications and data could ultimately lead to erroneous information and applications that are being used in practice and by local, state, and government agencies. The SimCenter is a collaboration of researchers and institutions, developing applications and utilizing data collections and other infrastructure components hosted by other entities. The SimCenter itself does not host any website, data, or provide computational, networking, or data storage resources. It utilizes two providers to manage SimCenter assets:
+
+1. 		The SimCenter utilizes the data storage and computational resources  provided by DesignSafe to host the SimCenter website, applications, and knowledge bases, and provide computational and data resources for the many applications developed by the SimCenter.
+2. 		The SimCenter utilizes GitHub to manage all the open-source software created by the SimCenter to create these applications.
+
+For each of these a separate cybersecurity plan has been developed:
+
+K.1 DesignSafe-ci Cybersecurity Plan
+The SimCenter creates applications and knowledge bases that are hosted at the DesignSafe-ci. Access to these resources and appropriate data curation policies is determined in collaboration with DesignSafe-ci. One of the key goals of the cybersecurity plan is protecting the integrity, availability, and confidentiality of the data collections and software managed by DesignSafe-ci for SimCenter to ensure SimCenter work does not expose the DesignSafe-ci to security issues. For this reason, the SimCenter works with DesignSafe-ci to develop and update the necessary policies, practices, and processes to insure data are properly protected and available only to those permitted access. The cybersecurity plan is reviewed yearly.
+The following is the SimCenter Security plan with regards to DesignSafe-ci. It is developed based on the current DesignSafe-ci plan, itself adapted from TACC’s security plan.
+
+K.1.1 Roles and Responsibilities
+·     SimCenter Management Team: Ultimately, overall responsibility for the success of the  SimCenter lies with the management team. This management team will be assisted by the SimCenter CTO in the matter of the cybersecurity program and its overall goals, objectives, and priorities in order to support the overall mission of  SimCenter.
+·     SimCenter Chief Technology Officer: Dr. McKenna, the SimCenter Chief Technology officer,  directs SimCenters day-to-day management of its security operations.
+1.    Dr. McKenna will continue to be the sole SimCenter person responsible for the uploading of applications to DesignSafe and will work with a DesignSafe-ci representative to make sure they are available to the users.
+2.    DesignSafe-ci has formed a security-working group, with one member from each of the NHERI awardees. Dr. McKenna is the SimCenter member and will continue to participate in all meetings that are held. The head of this working group is DesignSafe Chief Security Officer, Nathaniel Mendoza.
+3.    Dr. McKenna will continue to work with DesignSafe CSO, Nathaniel Mendoza, in evaluating the cybersecurity policy and procedures for the SimCenter.
+4.    Dr. McKenna will continue to administer the SimCenter Forum at DesignSafe.
+K.1.2 Risk Assessment
+For each application and database to be deployed by the SimCenter, Dr McKenna has and will continue to discuss with Nathaniel Mendoza the applications operation to identify threats and vulnerabilities both to DesignSafe’s system and the integrity of the data. Should threats or vulnerabilities be identified, SimCenter will modify the applications in consultation with Nathaniel to reduce any threats to an acceptable level. The threats and modifications made will be documented.
+K.1.3 Technical Safeguards
+·     All connections to DesignSafe by SimCenter applications are encrypted utilizing HTTPS.
+·     All communication between the application and DesignSafe for authentication, authorization and access is further restricted to using restful calls following the Tapis API that is provided by TACC. This is the same interface all users interacting with DesignSafe through the design safe portal (https://www.designsafe-ci.org/) currently use.
+·     Users provide username and passwords in the applications for access to DesignSafe to resources as they do in the portal. These usernames and passwords are administered by DesignSafe.
+K.1.4 Administrative Safeguards
+·     Authentication, authorization and access control to SimCenter applications and resources stored at DesignSafe will be through the DesignSafe access mechanisms. The SimCenter will not provide any such services or bypass any access control mechanisms.
+K.1.5 Policy and Procedures
+·     DesignSafe resources will again handle all user accounts. Including usernames,  passwords and access control. The SimCenter will provide no such resources.
+·     User credentials are provided again by DesignSafe, which currently uses single-factor authentication via a user password for access to the resources through Tapis.
+·     DesignSafe is responsible for creating and removing accounts.
+K.1.6 Awareness and Training
+·     SimCenter Awardees shall adhere to their local university cybersecurity policies and participate in their local university cybersecurity awareness and training. UC Berkeley has its own awareness and training policy.
+All UC Berkeley employees must complete an online cybersecurity training course within the first six weeks of hire. The training must be repeated yearly.
+K.1.7 Incident Response and Notification Procedures
+·     SimCenter will work with DesignSafe upon notification of an incident related to SimCenter application or data. Per the DesignSafe plan, an incident report will be generated and shared with the Security Working Group. Relevant information from the report will be shared with the DesignSafe management team and NSF NHERI program director Dr. Joy Pauschke.
+
+K.2 GitHub Cybersecurity Plan
+The advantage of GitHub is that it offers a secure environment that already exists and is widely used to develop software in a collaborative way. As documented on their website https://help.github.com/articles/github-security/, the GitHub cybersecurity, only allows secure ssh, ssl, and https interaction with your data installed. GitHub has physical security measures for the hardware, software, and data and file system backup. These employ typical cybersecurity measures that can be taken. For these reasons, a number of existing government funded research projects are hosted on GitHub (https://government.github.com/community/#research).
+As per the DesignSafe-ci plan, the SimCenter will rely heavily on the cybersecurity already provided by GitHub. In addition to the measures already in place the plan for the security of the software stored on GitHub (https://help.github.com/articles/github-security/), the plan for the cybersecurity of the SimCenter products on GitHub:
+K.2.1 Roles and Responsibilities:
+·     SimCenter Management Team: Ultimately, overall responsibility for the success of the  SimCenter lies with the management team. This management team will be assisted by the SimCenter CTO in the matter of the cybersecurity program and its overall goals, objectives, and priorities in order to support the overall mission of  SimCenter.
+·     SimCenter Chief Technology Officer: The SimCenter CTO Dr. McKenna directs SimCenter day-to-day management of its security program. With regards GitHub Dr. Mckenna has the following responsibilities:
+1.    Dr McKenna is responsible for maintaining the “NHERI-SimCenter” organization on GitHub, https://github.com/NHERI-SimCenter
+2.    Dr McKenna is responsible for maintaining a group, “NHERI-SimCenter-Developers”, in the SimCenter organization.
+3.    Dr McKenna is responsible for creating repositories on GitHub for SimCenter applications and for giving write access to these repositories to the ‘NHERI-SimCenter-Developers’ Group.
+·     Each SimCenter Developer is responsible for creating their own GitHub account.
+
+K.2.2 Technical Safeguards
+• All connections to GitHub by SimCenter developers for downloading and uploading of files is encrypted, e.g., using SSH, HTTPS, etc.
+K.2.3 Administrative Safeguards
+• Authentication, authorization and access control to GitHub repositories will be through the GitHub access mechanisms.
+K.2.4 Policy and Procedures
+Repository for Each Application: Each SimCenter application will have its own repository on GitHub. The repository will be open to the general public for viewing, forking and downloading of the source code. Write access to these repositories is only provided to the members of “NHERI-Software-Developers” group.
+Contributions from outside developers will be allowed through GitHub pull requests. All such pull requests will be reviewed by Dr. McKenna who will subsequently accept or reject these pull requests.
+GitHub Account for each Developer: Each SimCenter developer will be responsible for obtaining and maintaining their own GitHub account. Dr McKenna will be responsible for adding the developers to the SimCenter organization.
+Once a developer has left the SimCenter or is no longer active in the development, all write Dr. McKenna will remove that developer from the “NHERI-Software-Developers” group.
+K.2.5 Awareness and Training
+·     Per the DesignSafe-ci plan, all SimCenter Awardees shall adhere to their local university cybersecurity policies and participate in their local University cybersecurity awareness and training.
+All UC Berkeley employees must complete an online cybersecurity training course within the first six weeks of hire. The training must be repeated yearly
+K.2.6 Incident Response and Notification Procedures
+·     Should GitHub inform Dr McKenna of a security breach to SimCenter repositories, an incident report will be generated and shared with the DesignSafe-ci Security Working Group. Relevant information from the report will be shared with the DesignSafe Management team and NSF NHERI program director Dr. Joy Pauschke.
+
+
+References Cited
