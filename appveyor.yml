@@ -5,15 +5,6 @@ image:
   - macOS
   - Visual Studio 2019
 
-environment:
-  matrix:
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      MY_VAR: value1
-    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-      $HOME/Qt/5.15.2/gcc_64/bin
-    - APPVEYOR_BUILD_WORKER_IMAGE: macOS
-      MY_VAR: value4
-
 for:
   # Ubuntu (AppImage)
   -
