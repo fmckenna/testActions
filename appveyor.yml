@@ -24,3 +24,5 @@ for:
        - sh: ls
        - sh: ./a.out
        - sh: python --version
+       - sh: ls $HOME/venv3.8.6
+       - sh: ls $HOME/Qt/5.15 
