@@ -15,9 +15,15 @@ for:
 
     init:
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
+       - python -m pip install --upgrade pip
+       - pip install conan
+       - conan user
+       - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan       
 
     install:
-       - ps : uname
+       - uname
+       - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git                     
 
     build_script:
        - ps: gcc --version
@@ -36,9 +42,15 @@ for:
 
     init:
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
+       - python -m pip install --upgrade pip
+       - pip install conan
+       - conan user
+       - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan       
 
     install:
-       - ps : uname
+       - uname
+       - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git              
 
     build_script:
        - ps: gcc --version
