@@ -2,14 +2,14 @@ version: 1.0.{build}
 
 image:
   #  - Ubuntu1804
-  - macOS
+  - macos
 
 for:
   # macOS 
   -
     matrix:
       only:
-        - image: macOS
+        - image: macos
 
     clone_folder: ~/test
 
