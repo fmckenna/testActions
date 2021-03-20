@@ -2,6 +2,7 @@ version: 1.0.{build}
 
 image:
   - macOS
+  - Ubunto1804
 
 for:
   # macOS 
@@ -10,26 +11,16 @@ for:
       only:
         - image: macOS
 
-    clone_folder: ~/test
+    clone_folder: ~/SimCenter
 
     init:
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
-       - python -m pip install --upgrade pip
-       - pip install conan
-       - conan user
-       - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
 
     install:
-       - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - git clone https://github.com/NHERI-SimCenter/quoFEM.git       
+       - ps : uname
 
     build_script:
-       # build quoFEM
-       - cd quoFEM
-       - chmod 'u+x' makeEXE.sh
-       - ls
-       - ./makeEXE.sh
-       - cd ..
+       - ps: gcc --version
 
     test_script:
        - qmake --version
@@ -41,28 +32,16 @@ for:
       only:
         - image: Ubuntu1804
 
-    clone_folder: ~/test
+    clone_folder: ~/SimCenter
 
     init:
-       - sh: export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
-       - sh: python -m pip install --upgrade pip
-       - sh: pip install conan
-       - sh: conan user
-       - sh: conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
-       - sh: sudo apt-get update       
-       - sh: sudo apt-get --yes install mesa-common-dev
+       - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
 
     install:
-       - sh: git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - sh: git clone https://github.com/NHERI-SimCenter/quoFEM.git       
+       - ps : uname
 
     build_script:
-       # build quoFEM
-       - sh: cd quoFEM
-       - sh: chmod 'u+x' makeEXE.sh
-       - sh: ls
-       - sh: ./makeEXE.sh
-       - sh: cd ..
+       - ps: gcc --version
 
     test_script:
-       - sh: qmake --version
+       - qmake --version
