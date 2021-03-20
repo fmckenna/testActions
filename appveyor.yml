@@ -26,7 +26,12 @@ for:
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git                     
 
     build_script:
-       - ps: gcc --version
+       # build quoFEM
+       - cd quoFEM
+       - chmod 'u+x' makeEXE.sh
+       - ls
+       - ./makeEXE.sh
+       - cd ..
 
     test_script:
        - qmake --version
@@ -53,7 +58,12 @@ for:
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git              
 
     build_script:
-       - ps: gcc --version
+       # build quoFEM
+       - cd quoFEM
+       - chmod 'u+x' makeEXE.sh
+       - ls
+       - ./makeEXE.sh
+       - cd ..
 
     test_script:
        - qmake --version
