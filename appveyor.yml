@@ -35,7 +35,6 @@ for:
        - qmake --version
 
 
-for:
   # Ubuntu1804 
   -
     matrix:
