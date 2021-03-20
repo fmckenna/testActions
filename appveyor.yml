@@ -27,7 +27,8 @@ for:
     build_script:
        - sh: cd quoFEM
        - sh: chmod 'u+x' makeEXE.sh
-       - sh: ./makeEXE
+       - sh: ls
+       - sh: ./makeEXE.sh
        - sh: cd ..
 
     test_script:
