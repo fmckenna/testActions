@@ -18,7 +18,8 @@ for:
        - sh: python -m pip install --upgrade pip
        - sh: pip install conan
        - sh: conan user
-       - sh: conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan          - sh: apt install mesa-common-dev
+       - sh: conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+       - sh: sudo apt install mesa-common-dev
 
     install:
        - sh: git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
