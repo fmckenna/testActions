@@ -13,6 +13,38 @@ for:
     clone_folder: ~/test
 
     init:
+       - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
+       - python -m pip install --upgrade pip
+       - pip install conan
+       - conan user
+       - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+
+    install:
+       - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git       
+
+    build_script:
+       # build quoFEM
+       - cd quoFEM
+       - chmod 'u+x' makeEXE.sh
+       - ls
+       - ./makeEXE.sh
+       - cd ..
+
+    test_script:
+       - qmake --version
+
+
+for:
+  # macOS 
+  -
+    matrix:
+      only:
+        - image: Ubuntu1804
+
+    clone_folder: ~/test
+
+    init:
        - sh: export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - sh: python -m pip install --upgrade pip
        - sh: pip install conan
