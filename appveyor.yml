@@ -21,18 +21,14 @@ for:
        - sh: conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan       
 
     install:
-       - sh: git clone https://github.com/fmckenna/testActions.git
+       - sh: git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       - sh: git clone https://github.com/NHERI-SimCenter/quoFEM.git       
 
     build_script:
-       - sh: cd testActions
-       - sh: gcc main.cpp
-       - sh: ./a.out
-       - sh: mkdir build
-       - sh: cd build
-       - sh: cmake ..
-       - sh: make
-       - sh: ls
-       - sh: ./hello       
+       - sh: cd quoFEM
+       - sh: chmod 'u+x' makeEXE.sh
+       - sh: ./makeEXE
+       - sh: cd ..
 
     test_script:
        - sh: qmake --version
