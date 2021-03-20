@@ -27,6 +27,7 @@ for:
        - sh: git clone https://github.com/NHERI-SimCenter/quoFEM.git       
 
     build_script:
+       # build quoFEM
        - sh: cd quoFEM
        - sh: chmod 'u+x' makeEXE.sh
        - sh: ls
