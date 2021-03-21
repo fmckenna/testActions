@@ -49,6 +49,7 @@ for:
 
     init:
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
+       - sudo update-alternatives --set gcc /usr/bin/gcc-9
        - gcc --version
        - which gcc
        - ls /usr/bin
