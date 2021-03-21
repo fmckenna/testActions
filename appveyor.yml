@@ -54,7 +54,7 @@ for:
         - image: Ubuntu18
 
     environment:
-        GCC_VERSION 9
+        GCC_VERSION: 9
 
     clone_folder: ~/SimCenter
 
