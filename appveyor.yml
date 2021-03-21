@@ -18,14 +18,23 @@ for:
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
-       - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan       
+       - conan remote add conan-center https://conan.bintray.com
+       - conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter       
+
 
     install:
        - uname
+       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - git clone https://github.com/NHERI-SimCenter/quoFEM.git                     
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git 
 
     build_script:
+       # build SimCenterBackendApplications
+       - cd SimCenterBackendApplications
+       - chmod 'u+x' makeEXE.sh
+       - ./makeEXE.sh
+       - cd ..       
+       
        # build quoFEM
        - cd quoFEM
        - chmod 'u+x' makeEXE.sh
@@ -52,14 +61,21 @@ for:
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
-       - conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan       
-
+       - conan remote add conan-center https://conan.bintray.com
+       - conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
+       
     install:
        - uname
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git              
 
     build_script:
+       # build SimCenterBackendApplications
+       - cd SimCenterBackendApplications
+       - chmod 'u+x' makeEXE.sh
+       - ./makeEXE.sh
+       - cd ..
+       
        # build quoFEM
        - cd quoFEM
        - chmod 'u+x' makeEXE.sh
