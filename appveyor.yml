@@ -1,8 +1,18 @@
 version: 1.0.{build}
 
-image:
-  - macOS
-  - Ubuntu1804
+environment:
+  matrix:
+  - job_name: macOS
+    APPVEYOR_BUILD_WORKER_IMAGE: macOS
+  - job_name: Ubuntu18
+    APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
+
+#- job_name: Visual Studio 2017
+#    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+#image:
+#  - macOS
+#  - Ubuntu1804
 
 for:
   # macOS 
@@ -41,7 +51,7 @@ for:
   -
     matrix:
       only:
-        - image: Ubuntu1804
+        - image: Ubuntu18
 
     environment:
         GCC_VERSION 9
