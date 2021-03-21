@@ -15,8 +15,6 @@ for:
 
     init:
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
-       - gcc --version
-       - quit
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
@@ -31,13 +29,13 @@ for:
        # build quoFEM
        - cd quoFEM
        - chmod 'u+x' makeEXE.sh
-       - ls
        - ./makeEXE.sh
        - cd ..
 
     test_script:
        - qmake --version
-
+       - gcc --version
+       - python --version
 
   # Ubuntu1804 
   -
@@ -71,3 +69,5 @@ for:
 
     test_script:
        - qmake --version
+       - gcc --version
+       - python --version
