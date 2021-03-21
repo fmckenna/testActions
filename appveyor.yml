@@ -1,15 +1,5 @@
 version: 1.0.{build}
 
-#environment:
-#  matrix:
-#  - job_name: macOS
-#    APPVEYOR_BUILD_WORKER_IMAGE: macOS
-#  - job_name: Ubuntu18
-#    APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu1804
-#
-#- job_name: Visual Studio 2017
-#    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-
 image:
   - macOS
   - Ubuntu1804
@@ -63,14 +53,12 @@ for:
       only:
         - image: Ubuntu1804
 
-    environment:
-        GCC_VERSION: 9
-
     clone_folder: ~/SimCenter
 
     init:
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - gcc --version
+       - ls /usr/bin
        - ls /usr/local/bin
        - exit
        - sudo apt-get -y install libglu1-mesa-dev freeglut3-dev mesa-common-dev
