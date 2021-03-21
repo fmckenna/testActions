@@ -25,6 +25,8 @@ for:
 
     init:
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
+       - gcc --version
+       - quit
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
@@ -60,6 +62,9 @@ for:
 
     init:
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
+       - gcc --version
+       - ls /usr/local/bin
+       - exit
        - sudo apt-get -y install libglu1-mesa-dev freeglut3-dev mesa-common-dev
        - python -m pip install --upgrade pip
        - pip install conan
