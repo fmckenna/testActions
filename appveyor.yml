@@ -14,6 +14,14 @@ image:
   - macOS
   - Ubuntu1804
 
+
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      GCC_VERSION: 9
+    - APPVEYOR_BUILD_WORKER_IMAGE: macOS
+      MY_VAR: value4
+
 for:
   # macOS 
   -
