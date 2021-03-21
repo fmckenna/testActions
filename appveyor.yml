@@ -64,6 +64,7 @@ for:
        
     install:
        - uname
+       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git       
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git              
 
