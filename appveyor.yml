@@ -50,6 +50,7 @@ for:
     init:
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - gcc --version
+       - which gcc
        - ls /usr/bin
        - ls /usr/local/bin
        - exit
