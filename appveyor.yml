@@ -18,7 +18,6 @@ for:
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
-       - conan remote add conan-center https://conan.bintray.com
        - conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter       
 
 
@@ -61,7 +60,6 @@ for:
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
-       - conan remote add conan-center https://conan.bintray.com
        - conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
        
     install:
