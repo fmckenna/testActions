@@ -43,6 +43,9 @@ for:
       only:
         - image: Ubuntu1804
 
+    environment:
+        GCC_VERSION 9
+
     clone_folder: ~/SimCenter
 
     init:
