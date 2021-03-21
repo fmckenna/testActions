@@ -47,7 +47,7 @@ for:
 
     init:
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
-       - sudo apt-get install freeglut3 freeglut3-dev
+       - sudo apt-get -y install libglu1-mesa-dev freeglut3-dev mesa-common-dev
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
