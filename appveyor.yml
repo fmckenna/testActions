@@ -165,4 +165,3 @@ for:
 
     test_script:
       -cmd: python --version
-      -cmd: qmake --version
