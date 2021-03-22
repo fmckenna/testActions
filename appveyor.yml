@@ -124,7 +124,6 @@ for:
       #- cmd: dir
       #- cmd: cd SimCenterBackendApplications
       #- cmd: mkdir build
-      #- cmd: dir
       #- cmd: cd build
       #- cmd: conan install .. --build missing
       #- cmd: cmake .. -G "Visual Studio 16 2019"
@@ -141,6 +140,10 @@ for:
       - cmd: cd quoFEM
       - cmd: mkdir build
       - cmd: cd build
+      - cmd: echo %PATH%
+      - cmd: echo %QT%
+      - cmd: dir C:\Qt\5.15.2\msvc2019_64
+      - cmd: dir C:\Qt\5.15.2\msvc2019_64\bin      
       - cmd: conan install .. --build missing
       - cmd: qmake ..\quoFEM.pro
       - cmd: nmake
