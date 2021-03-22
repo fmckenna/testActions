@@ -128,3 +128,4 @@ for:
       - cmd: cd ..
       
     test_script:
+      -cmd: python --version
