@@ -115,11 +115,42 @@ for:
 
     install:
        - cmd: git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
-       - cmd: python --version
+       - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git        
+       - cmd: dir
 
     build_script:
-      - cmd: dir
-      - cmd: cd SimCenterBackendApplications
+      # build simcenter backend
+      #- cmd: dir
+      #- cmd: cd SimCenterBackendApplications
+      #- cmd: mkdir build
+      #- cmd: dir
+      #- cmd: cd build
+      #- cmd: conan install .. --build missing
+      #- cmd: cmake .. -G "Visual Studio 16 2019"
+      #- cmd: cmake --build . --config Release
+      #- cmd: cmake --install .
+      #- cmd: cd ..
+      #- cmd: cd ..
+
+      #
+      # build quoFEM
+      #
+
+      # first UI
+      - cmd: cd quoFEM
+      - cmd: mkdir build
+      - cmd: cd build
+      - cmd: conan install .. --build missing
+      - cmd: qmake ..\quoFEM.pro
+      - cmd: nmake
+      - cmd: cd ..
+
+      
+      # now quoFEM backend
+
+      - cmd: cd ..      
+      - cmd: cd backend
       - cmd: mkdir build
       - cmd: dir
       - cmd: cd build
@@ -128,6 +159,10 @@ for:
       - cmd: cmake --build . --config Release
       - cmd: cmake --install .
       - cmd: cd ..
-      
+      - cmd: cd ..
+
+      - cmd: cd ..
+
     test_script:
       -cmd: python --version
+      -cmd: qmake --version
