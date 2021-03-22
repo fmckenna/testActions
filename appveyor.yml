@@ -97,7 +97,7 @@ for:
       only:
         - image: Visual Studio 2019
 
-    clone_folder: ~/SimCenter
+    clone_folder: c:\projects\SimCenter
 
     init:
        - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
@@ -113,7 +113,6 @@ for:
     install:
        - cmd: git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
        - cmd: python --version
-
 
     build_script:
       - cmd: cd SimCenterBackendApplications
