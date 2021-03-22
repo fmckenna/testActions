@@ -145,11 +145,8 @@ for:
       - cmd: qmake ..\quoFEM.pro
       - cmd: nmake
       - cmd: cd ..
-
       
       # now quoFEM backend
-
-      - cmd: cd ..      
       - cmd: cd backend
       - cmd: mkdir build
       - cmd: dir
