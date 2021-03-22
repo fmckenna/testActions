@@ -112,7 +112,7 @@ for:
        - cmd: conan profile update settings.compiler="Visual Studio" default
        - cmd: conan profile update settings.compiler.version="16" default
        - cmd: conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
-      - cmd: echo %PATH%
+       - cmd: echo %PATH%
 
     install:
        - cmd: git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
