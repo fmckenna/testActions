@@ -90,7 +90,9 @@ for:
        - gcc --version
        - python --version
 
-
+  # Visual Studio 2019
+  -
+  
     matrix:
       only:
         - image: Visual Studio 2019
