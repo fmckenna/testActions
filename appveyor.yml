@@ -124,7 +124,6 @@ for:
       - cmd: dir
       - cmd: cd build
       - cmd: conan install .. --build missing
-      - cmd: cd build
       - cmd: cmake .. -G "Visual Studio 16 2019"
       - cmd: cmake --build . --config Release
       - cmd: cmake --install .
