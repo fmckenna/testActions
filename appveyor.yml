@@ -100,8 +100,10 @@ for:
     clone_folder: c:\projects\SimCenter
 
     init:
+       - cmd: set PYTHON=C:\PYTHON3.8-x64
+       - cmd: set PYTHONNET_PYDLL=%PYTHON%\python3.8.dll
+       - cmd: set PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
        - cmd: call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
-       - cmd: set PATH=%PATH%;%PYTHON%/Scripts/
        - cmd: pip.exe install conan
        - cmd: conan user
        - cmd: conan profile new default --detect
