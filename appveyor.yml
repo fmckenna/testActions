@@ -26,7 +26,9 @@ for:
        - uname
        - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - git clone https://github.com/NHERI-SimCenter/quoFEM.git 
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git
+       - git clone https://github.com/NHERI-SimCenter/WE-UQ.git
+       - git clone https://github.com/NHERI-SimCenter/R2DTool.git
 
     build_script:
        # build SimCenterBackendApplications
@@ -37,6 +39,18 @@ for:
        
        # build quoFEM
        - cd quoFEM
+       - chmod 'u+x' makeEXE.sh
+       - ./makeEXE.sh
+       - cd ..
+
+       # build WE-UQ
+       - cd WE-UQ
+       - chmod 'u+x' makeEXE.sh
+       - ./makeEXE.sh
+       - cd ..
+
+       # build R2D
+       - cd R2Dtool
        - chmod 'u+x' makeEXE.sh
        - ./makeEXE.sh
        - cd ..
@@ -65,10 +79,12 @@ for:
        
     install:
        - uname
-       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git       
+       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - git clone https://github.com/NHERI-SimCenter/quoFEM.git              
-
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git
+       - git clone https://github.com/NHERI-SimCenter/WE-UQ.git
+       - git clone https://github.com/NHERI-SimCenter/R2DTool.git
+       
     build_script:
        # build SimCenterBackendApplications
        - cd SimCenterBackendApplications
@@ -80,6 +96,18 @@ for:
        - cd quoFEM
        - chmod 'u+x' makeEXE.sh
        - ls
+       - ./makeEXE.sh
+       - cd ..
+
+       # build WE-UQ
+       - cd WE-UQ
+       - chmod 'u+x' makeEXE.sh
+       - ./makeEXE.sh
+       - cd ..
+
+       # build R2D
+       - cd R2Dtool
+       - chmod 'u+x' makeEXE.sh
        - ./makeEXE.sh
        - cd ..
 
