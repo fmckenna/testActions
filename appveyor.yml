@@ -28,7 +28,7 @@ for:
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git
        - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/Q3Shark.git
+       - git clone https://github.com/NHERI-SimCenter/QS3hark.git
        - git clone https://github.com/NHERI-SimCenter/WE-UQ.git       
        - git clone https://github.com/NHERI-SimCenter/R2DTool.git
 
