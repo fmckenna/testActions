@@ -7,6 +7,6 @@ class test(ConanFile):
     build_policy = "missing"
 
     def configure(self):
-        if self.settings.os == "Windows":
-            self.options["libcurl"].with_winssl = True
-            self.options["libcurl"].with_openssl = False
+            self.options["qt"].qt3d = True
+            self.options["qt"].qtcharts = True
+            self.options["qt"].qttools = True            
