@@ -38,5 +38,6 @@ steps:
   displayName: 'Install conan'
 
 - script: |
-    conan install qt/5.15.2 -o qt:qt3d=True -o qt:qtcharts=True -o qt:qttools=True -g virtualrunenv --build missing   
+    conan install qt/5.15.2 -o qt:qt3d=True -o qt:qtcharts=True -o qt:qttools=True -g virtualrunenv --build missing
+    ls
   displayName: 'Install Qt'
