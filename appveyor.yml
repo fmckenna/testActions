@@ -127,6 +127,8 @@ for:
 
        # build PBE
        - cd PBE
+       - pwd
+       - ls
        - chmod 'u+x' makeEXE.sh
        - ls
        - ./makeEXE.sh
