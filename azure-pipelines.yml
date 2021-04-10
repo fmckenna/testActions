@@ -34,11 +34,11 @@ steps:
     conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan    
   displayName: 'Install conan'
 
-# conan install ./testActions --build missing
 - script: |
     sudo apt-get update
     sudo apt-get install libgl1-mesa-dev libxkbcommon-x11-0 libgtk2.0-dev nasm -y
-    conan install ./testActions --build missing    
+    conan install ./testActions --build missing -g=virtualrunenv
+    source activate_run.sh    
     qmake --version
     ls
     ls ~/.conan/data
