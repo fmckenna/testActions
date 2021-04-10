@@ -123,7 +123,7 @@ for:
        - cd EE-UQ
        - chmod 'u+x' makeEXE.sh
        - ls
-       # ./makeEXE.sh
+       ./makeEXE.sh
        - cd ..
 
        # build PBE
@@ -140,7 +140,7 @@ for:
        - cd ..
 
        # build R2D
-       - cd R2Dtool
+       - cd R2DTool
        - chmod 'u+x' makeEXE.sh
        # - ./makeEXE.sh
        - cd ..
