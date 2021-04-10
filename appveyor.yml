@@ -1,9 +1,7 @@
 version: 1.0.{build}
 
 image:
-  - macOS
   - Ubuntu1804
-  - Visual Studio 2019
 
 for:
   # macOS 
@@ -91,6 +89,8 @@ for:
        - pip install conan
        - conan user
        - conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
+       - g++ -v
+       - blah
        
     install:
        - uname
