@@ -122,14 +122,14 @@ for:
        - cd EE-UQ
        - chmod 'u+x' makeEXE.sh
        - ls
-       - ./makeEXE.sh
+       # - ./makeEXE.sh
        - cd ..
 
        # build PBE
        - cd PBE
        - chmod 'u+x' makeEXE.sh
        - ls
-       # - ./makeEXE.sh
+       - ./makeEXE.sh
        - cd ..
 
        # build WE-UQ
