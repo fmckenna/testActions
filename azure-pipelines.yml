@@ -9,6 +9,8 @@ pool:
 steps:
 - checkout: self
 
+- checkout: github://NHERI-SimCenter/SimCenterCommon
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
