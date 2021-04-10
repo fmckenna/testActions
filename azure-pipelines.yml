@@ -1,15 +1,21 @@
 
-
 trigger:
 - main
+
+resources:
+  repositories:
+  - repository: Common
+    type: github
+    endpoint: https://github.com/NHERI-SimCenter/SimCenterCommon
+    name: SimCenterCommon
+    ref: master
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
 - checkout: self
-
-- checkout: github://NHERI-SimCenter/SimCenterCommon
+- checkout: Common
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
