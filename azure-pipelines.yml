@@ -38,6 +38,7 @@ steps:
   displayName: 'Install conan'
 
 - script: |
+    sudo apt-get install libgl-dev
     conan install ./testActions --build missing
     qmake --version
     ls
