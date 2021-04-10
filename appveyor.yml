@@ -1,7 +1,9 @@
 version: 1.0.{build}
 
 image:
+  - macOS
   - Ubuntu1804
+  - Visual Studio 2019
 
 for:
   # macOS 
@@ -13,6 +15,7 @@ for:
     clone_folder: ~/SimCenter
 
     init:
+       - blah
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - python -m pip install --upgrade pip
        - pip install conan
@@ -159,6 +162,7 @@ for:
     clone_folder: c:\projects\SimCenter
 
     init:
+       - cmd: blah
        - cmd: set PYTHON=C:\PYTHON38-x64
        - cmd: set PYTHONNET_PYDLL=%PYTHON%\python3.8.dll
        - cmd: set QT=C:\Qt\5.15.2\msvc2019_64\bin
