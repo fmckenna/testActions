@@ -6,8 +6,8 @@ resources:
   repositories:
   - repository: Common
     type: github
-    endpoint: https://github.com/NHERI-SimCenter/SimCenterCommon.git
-    name: SimCenterCommon
+    endpoint: NHERI-SimCenter
+    name: NHERI-SimCenter/SimCenterCommon
     ref: master
 
 pool:
@@ -15,7 +15,7 @@ pool:
 
 steps:
 - checkout: self
-- checkout: Common
+-checkout: Common
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
