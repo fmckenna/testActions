@@ -122,7 +122,7 @@ for:
        - cd EE-UQ
        - chmod 'u+x' makeEXE.sh
        - ls
-       ./makeEXE.sh
+       - ./makeEXE.sh
        - cd ..
 
        # build PBE
