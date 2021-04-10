@@ -38,7 +38,7 @@ steps:
   displayName: 'Install conan'
 
 - script: |
-    conan install qt/5.15.2 --build missing
+    conan install qt/5.15.2@conan/stable --build missing
     qmake --version
     ls
   displayName: 'Install Qt'
