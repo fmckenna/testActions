@@ -39,4 +39,5 @@ steps:
     conan install ./testActions --build missing
     qmake --version
     ls
+    ls ~/.conan/data
   displayName: 'Install Qt'
