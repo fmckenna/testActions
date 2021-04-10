@@ -17,9 +17,6 @@ steps:
 - checkout: self
 - checkout: Common
 
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 # use python 3.8
 - task: UsePythonVersion@0
   displayName: Switch to Python 3.8
@@ -34,11 +31,11 @@ steps:
     pip install conan
     conan user
     conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter       
-    pwd
   displayName: 'Install conan'
 
 - script: |
-    sudo apt-get install libgl-dev
+    sudo apt-get update
+    sudo apt-get install libgl1-mesa-dev libxkbcommon-x11-0 libgtk2.0-dev nasm -y
     conan install ./testActions --build missing
     qmake --version
     ls
