@@ -20,8 +20,19 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+# use python 3.8
+- task: UsePythonVersion@0
+  displayName: Switch to Python 3.8
+  inputs:
+    versionSpec: '3.8' 
+    addToPath: true 
+    architecture: 'x64'
+
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    ls
+    python -v
+    python -m pip install --upgrade pip
+    pip install conan
+    conan user
+    conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter       
     pwd
-  displayName: 'Run a multi-line script'
+  displayName: 'Install conan'
