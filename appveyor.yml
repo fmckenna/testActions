@@ -92,8 +92,6 @@ for:
        - pip install conan
        - conan user
        - conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
-       - g++ -v
-       - blah
        
     install:
        - uname
@@ -110,14 +108,14 @@ for:
        # build SimCenterBackendApplications
        - cd SimCenterBackendApplications
        - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
+       # - ./makeEXE.sh
        - cd ..
        
        # build quoFEM
        - cd quoFEM
        - chmod 'u+x' makeEXE.sh
        - ls
-       - ./makeEXE.sh
+       # - ./makeEXE.sh
        - cd ..
 
 
@@ -125,14 +123,14 @@ for:
        - cd EE-UQ
        - chmod 'u+x' makeEXE.sh
        - ls
-       - ./makeEXE.sh
+       # ./makeEXE.sh
        - cd ..
 
        # build PBE
        - cd PBE
        - chmod 'u+x' makeEXE.sh
        - ls
-       - ./makeEXE.sh
+       # - ./makeEXE.sh
        - cd ..
 
        # build WE-UQ
@@ -143,7 +141,7 @@ for:
 
        # build R2D
        - cd R2Dtool
-       - chmod 'u+x' makeEXE.sh
+       # - chmod 'u+x' makeEXE.sh
        - ./makeEXE.sh
        - cd ..
 
