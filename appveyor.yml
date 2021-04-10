@@ -136,13 +136,13 @@ for:
        # build WE-UQ
        - cd WE-UQ
        - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
+       # - ./makeEXE.sh
        - cd ..
 
        # build R2D
        - cd R2Dtool
-       # - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
+       - chmod 'u+x' makeEXE.sh
+       # - ./makeEXE.sh
        - cd ..
 
     test_script:
