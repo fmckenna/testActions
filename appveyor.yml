@@ -118,7 +118,6 @@ for:
        # - ./makeEXE.sh
        - cd ..
 
-
        # build EE-UQ
        - cd EE-UQ
        - chmod 'u+x' makeEXE.sh
