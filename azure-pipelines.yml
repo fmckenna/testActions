@@ -6,7 +6,7 @@ resources:
   repositories:
   - repository: Common
     type: github
-    endpoint: https://github.com/NHERI-SimCenter/SimCenterCommon
+    endpoint: https://github.com/NHERI-SimCenter/SimCenterCommon.git
     name: SimCenterCommon
     ref: master
 
