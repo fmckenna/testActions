@@ -38,8 +38,10 @@ steps:
 - script: |
     sudo apt-get update
     sudo apt-get install libgl1-mesa-dev libxkbcommon-x11-0 libgtk2.0-dev nasm -y
-    conan install qt/5.11.3@bincrafters/stable -o qt:qt3d=True -o qt:qtcharts=True -o qt:qttools=True -g virtualrunenv --build missing
+    conan install ./testActions --build missing    
     qmake --version
     ls
     ls ~/.conan/data
+    env
+    find ~ -name qmake
   displayName: 'Install Qt'
