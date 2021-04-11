@@ -15,7 +15,6 @@ for:
     clone_folder: ~/SimCenter
 
     init:
-       - blah
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - python -m pip install --upgrade pip
        - pip install conan
@@ -25,50 +24,22 @@ for:
 
     install:
        - uname
-       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
+       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git       
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git
-       - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/QS3hark.git
-       - git clone https://github.com/NHERI-SimCenter/PBE.git       
-       - git clone https://github.com/NHERI-SimCenter/WE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/R2DTool.git
 
     build_script:
+
        # build SimCenterBackendApplications
        - cd SimCenterBackendApplications
        - chmod 'u+x' makeEXE.sh
        - ./makeEXE.sh
-       - cd ..       
-       
+       - cd ..
+
        # build quoFEM
        - cd quoFEM
        - chmod 'u+x' makeEXE.sh
        - ./makeEXE.sh
-       - cd ..
-
-       # build WE-UQ
-       - cd WE-UQ
-       - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
-       - cd ..
-
-       # build EE-UQ
-       - cd EE-UQ
-       - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
-       - cd ..
-
-       # build PBE
-       - cd PBE
-       - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
-       - cd ..
-
-       # build R2D
-       - cd R2Dtool
-       - chmod 'u+x' makeEXE.sh
-       # - ./makeEXE.sh
        - cd ..
 
     test_script:
@@ -98,52 +69,19 @@ for:
        - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git
-       - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/QS3hark.git
-       - git clone https://github.com/NHERI-SimCenter/PBE.git       
-       - git clone https://github.com/NHERI-SimCenter/WE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/R2DTool.git
        
     build_script:
        # build SimCenterBackendApplications
        - cd SimCenterBackendApplications
        - chmod 'u+x' makeEXE.sh
-       # - ./makeEXE.sh
+       - ./makeEXE.sh
        - cd ..
        
        # build quoFEM
        - cd quoFEM
        - chmod 'u+x' makeEXE.sh
        - ls
-       # - ./makeEXE.sh
-       - cd ..
-
-       # build EE-UQ
-       - cd EE-UQ
-       - chmod 'u+x' makeEXE.sh
-       - ls
-       # - ./makeEXE.sh
-       - cd ..
-
-       # build PBE
-       - cd PBE
-       - pwd
-       - ls
-       - chmod 'u+x' makeEXE.sh
-       - ls
        - ./makeEXE.sh
-       - cd ..
-
-       # build WE-UQ
-       - cd WE-UQ
-       - chmod 'u+x' makeEXE.sh
-       # - ./makeEXE.sh
-       - cd ..
-
-       # build R2D
-       - cd R2DTool
-       - chmod 'u+x' makeEXE.sh
-       # - ./makeEXE.sh
        - cd ..
 
     test_script:
@@ -161,7 +99,6 @@ for:
     clone_folder: c:\projects\SimCenter
 
     init:
-       - cmd: blah
        - cmd: set PYTHON=C:\PYTHON38-x64
        - cmd: set PYTHONNET_PYDLL=%PYTHON%\python3.8.dll
        - cmd: set QT=C:\Qt\5.15.2\msvc2019_64\bin
@@ -180,10 +117,6 @@ for:
        - cmd: git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        - git clone https://github.com/NHERI-SimCenter/quoFEM.git
-       - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/QS3hark.git
-       - git clone https://github.com/NHERI-SimCenter/PBE.git
-       - git clone https://github.com/NHERI-SimCenter/WE-UQ.git                     
        - cmd: dir
 
     build_script:
@@ -224,35 +157,6 @@ for:
       - cmd: cd ..
       - cmd: cd ..
 
-      - cmd: cd ..
-
-
-      # EE-UQ
-      - cmd: cd EE-UQ
-      - cmd: mkdir build
-      - cmd: cd build
-      - cmd: conan install .. --build missing
-      - cmd: qmake ..\EE-UQ.pro
-      - cmd: nmake
-      - cmd: cd ..
-
-      # PBE
-      - cmd: cd PBE
-      - cmd: mkdir build
-      - cmd: cd build
-      - cmd: conan install .. --build missing
-      - cmd: qmake ..\PBE.pro
-      - cmd: nmake
-      - cmd: cd ..
-
-
-      # WE-UQ
-      - cmd: cd WE-UQ
-      - cmd: mkdir build
-      - cmd: cd build
-      - cmd: conan install .. --build missing
-      - cmd: qmake ..\WE-UQ.pro
-      - cmd: nmake
       - cmd: cd ..
 
     test_script:
