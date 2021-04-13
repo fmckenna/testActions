@@ -144,11 +144,11 @@ for:
       #
 
       # first UI
-      - cmd: cd PBE
+      - cmd: cd EE-UQ
       - cmd: mkdir build
       - cmd: cd build
       - cmd: conan install .. --build missing
-      - cmd: qmake ..\PBE.pro
+      - cmd: qmake ..\EE-UQ.pro
       - cmd: nmake
       - cmd: cd ..
       - cmd: cd ..      
