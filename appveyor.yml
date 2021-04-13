@@ -1,8 +1,8 @@
 version: 1.0.{build}
 
 image:
-  - macOS
-  - Ubuntu1804
+#  - macOS
+#  - Ubuntu1804
   - Visual Studio 2019
 
 for:
@@ -146,7 +146,7 @@ for:
       - cmd: mkdir build
       - cmd: cd build
       - cmd: conan install .. --build missing
-      - cmd: qmake ..\EE-UQ.pro
+      - cmd: qmake ..\PBE.pro
       - cmd: nmake
       - cmd: cd ..
       - cmd: cd ..      
