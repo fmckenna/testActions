@@ -20,8 +20,6 @@ for:
        - pip install conan
        - conan user
        - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter       
-
-
     install:
        - uname
        - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git       
@@ -33,7 +31,7 @@ for:
        # build SimCenterBackendApplications
        - cd SimCenterBackendApplications
        - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
+       #- ./makeEXE.sh
        - cd ..
 
        # build HydroUQ
@@ -81,7 +79,7 @@ for:
        - cd HydroUQ
        - chmod 'u+x' makeEXE.sh
        - ls
-       - ./makeEXE.sh
+       #- ./makeEXE.sh
        - cd ..
 
     test_script:
