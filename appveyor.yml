@@ -1,7 +1,5 @@
 version: 1.0.{build}
 
-stack: python 3.7
-
 image:
   - macOS
   - Ubuntu1804
@@ -57,6 +55,8 @@ for:
     matrix:
       only:
         - image: Ubuntu1804
+
+    stack: python 3.7
 
     clone_folder: ~/SimCenter
 
