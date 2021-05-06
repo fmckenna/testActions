@@ -57,12 +57,15 @@ for:
 
     clone_folder: ~/SimCenter
 
+    stack: python 3.7
+
     init:
        - uname
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - sudo update-alternatives --set gcc /usr/bin/gcc-8
        - sudo apt-get -y install libglu1-mesa-dev freeglut3-dev mesa-common-dev libblas-dev liblapack-dev
        - python -m pip install --upgrade pip
+       - python --version
        - pip install conan
        - conan user
        - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
