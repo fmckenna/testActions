@@ -1,5 +1,7 @@
 version: 1.0.{build}
 
+stack: python 3.7
+
 image:
   - macOS
   - Ubuntu1804
@@ -16,6 +18,7 @@ for:
 
     init:
        - uname
+       - blah
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - python -m pip install --upgrade pip
        - pip install conan
@@ -56,8 +59,6 @@ for:
         - image: Ubuntu1804
 
     clone_folder: ~/SimCenter
-
-    stack: python 3.7
 
     init:
        - uname
@@ -106,6 +107,7 @@ for:
     clone_folder: c:\projects\SimCenter
 
     init:
+       - cmd: blah
        - cmd: set PYTHON=C:\PYTHON38-x64
        - cmd: set PYTHONNET_PYDLL=%PYTHON%\python3.8.dll
        - cmd: set QT=C:\Qt\5.15.2\msvc2019_64\bin
