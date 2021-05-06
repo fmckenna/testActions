@@ -56,8 +56,6 @@ for:
       only:
         - image: Ubuntu1804
 
-    stack: python 3.7
-
     clone_folder: ~/SimCenter
 
     init:
