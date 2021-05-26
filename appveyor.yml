@@ -23,6 +23,7 @@ for:
        - pip install conan
        - conan user
        - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
+       - brew install wget
 
     install:
        - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
