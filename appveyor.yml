@@ -32,7 +32,9 @@ for:
        - git clone https://github.com/NHERI-SimCenter/QS3hark.git
        - git clone https://github.com/NHERI-SimCenter/PBE.git
        - wget https://opensees.berkeley.edu/OpenSees/code/OpenSeesMac3.3.0.tar.gz
-       - tar zxBf OpenSees3.3.0.tar.gz
+       - tar zxBf OpenSees3.3.0Mac.tar.gz
+       - wget https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-6.13-release-public-Darwin.x86_64.tar.gz
+       - tar zxBf dakota-6.13-release-public-Darwin.x86_64.tar.gz
        - ls
        - blah
 
