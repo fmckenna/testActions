@@ -2,8 +2,6 @@ version: 1.0.{build}
 
 image:
   - macOS
-  - Ubuntu1804
-  - Visual Studio 2019
 
 stack: python 3.7
 
@@ -22,8 +20,7 @@ for:
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
-       - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter       
-
+       - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
 
     install:
        - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
@@ -31,6 +28,10 @@ for:
        - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
        - git clone https://github.com/NHERI-SimCenter/QS3hark.git
        - git clone https://github.com/NHERI-SimCenter/PBE.git
+       - wget https://opensees.berkeley.edu/OpenSees/code/OpenSeesMac3.3.0.tar.gz
+       - tar zxBf OpenSees3.3.0.tar.gz
+       - ls
+       - blah
 
     build_script:
 
