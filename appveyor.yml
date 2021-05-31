@@ -37,7 +37,11 @@ for:
        - tar zxBf dakota-6.13-release-public-Darwin.x86_64.tar.gz
        - ls
        - pwd
-       - blah
+       - export PATH="/Users/appveyor/SimCenter/OpenSees3.3.0/bin:$PATH"
+       - export PATH="/Users/appveyor/SimCenter/dakota-6.13.0.Darwin.x86_64/bin:$PATH"              
+       - export PYTHONPATH="/Users/appveyor/SimCenter/dakota-6.13.0.Darwin.x86_64/share/dakota/Python
+       - dakota
+
 
     build_script:
 
@@ -67,7 +71,6 @@ for:
     clone_folder: ~/SimCenter
 
     init:
-       - blah
        - uname
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - export PATH="/home/appveyor/.local/bin:$PATH"
