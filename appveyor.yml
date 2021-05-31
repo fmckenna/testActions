@@ -39,7 +39,7 @@ for:
        - pwd
        - export PATH="/Users/appveyor/SimCenter/OpenSees3.3.0/bin:$PATH"
        - export PATH="/Users/appveyor/SimCenter/dakota-6.13.0.Darwin.x86_64/bin:$PATH"              
-       - export PYTHONPATH="/Users/appveyor/SimCenter/dakota-6.13.0.Darwin.x86_64/share/dakota/Python
+       - export PYTHONPATH="/Users/appveyor/SimCenter/dakota-6.13.0.Darwin.x86_64/share/dakota/Python"
        - dakota
 
 
