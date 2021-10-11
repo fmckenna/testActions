@@ -20,7 +20,6 @@ for:
        - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8/bin:$PATH"
        - ls ~
        - which python
-       - ls /Users/venv3.8
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
