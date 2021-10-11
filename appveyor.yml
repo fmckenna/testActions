@@ -1,9 +1,9 @@
 version: 1.0.{build}
 
 image:
-  - macOS
+  - macOS-bigsur
   - Ubuntu1804
-  - Visual Studio 2019  
+  - Visual Studio 2019
 
 stack: python 3.7
 
@@ -12,50 +12,32 @@ for:
   -
     matrix:
       only:
-        - image: macOS
+        - image: macOS-bigsur
 
     clone_folder: ~/SimCenter
 
     init:
-       - uname
-       - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8.6/bin:$PATH"
+       - export PATH="$HOME/Qt/5.15.2/clang_64/bin:$HOME/venv3.8/bin:/Users/appveyor/Library/Python/2.7/bin:$PATH"
+       - python --version
+       - which python
        - python -m pip install --upgrade pip
        - pip install conan
        - conan user
        - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
-       - brew install wget
-
+       
     install:
-       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
+       - uname
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/QS3hark.git
-       - git clone https://github.com/NHERI-SimCenter/PBE.git
-       - wget https://opensees.berkeley.edu/OpenSees/code/OpenSeesMac3.3.0.tar.gz
-       - tar zxBf OpenSeesMac3.3.0.tar.gz 
-       - wget https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-6.13-release-public-Darwin.x86_64.tar.gz
-       - tar zxBf dakota-6.13-release-public-Darwin.x86_64.tar.gz
-       - ls
-       - pwd
-       - export PATH="/Users/appveyor/SimCenter/OpenSees3.3.0/bin:$PATH"
-       - export PATH="/Users/appveyor/SimCenter/dakota-6.13.0.Darwin.x86_64/bin:$PATH"              
-       - export PYTHONPATH="/Users/appveyor/SimCenter/dakota-6.13.0.Darwin.x86_64/share/dakota/Python"
-       - dakota
-
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git
 
     build_script:
 
-       # build SimCenterBackendApplications
-       - cd SimCenterBackendApplications
+       # build quoFEM
+       - cd quoFEM
        - chmod 'u+x' makeEXE.sh
        - ./makeEXE.sh
        - cd ..
-
-       # build PBE
-       - cd PBE
-       - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
-       - cd ..
+       - ls ~/.conan
 
     test_script:
        - qmake --version
@@ -71,34 +53,24 @@ for:
     clone_folder: ~/SimCenter
 
     init:
-       - uname
        - export PATH="$HOME/Qt/5.15.2/gcc_64/bin:$HOME/venv3.8.6/bin:$PATH"
        - export PATH="/home/appveyor/.local/bin:$PATH"
        
     install:
-       - sudo update-alternatives --set gcc /usr/bin/gcc-8
+       - uname
+       - sudo update-alternatives --set gcc /usr/bin/gcc-9
        - sudo apt-get update
        - sudo apt-get -y install libglu1-mesa-dev freeglut3-dev mesa-common-dev libblas-dev liblapack-dev
        - python -m pip install --upgrade pip
-       - python --version
        - pip install conan
        - conan user
-       - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter    
-       - git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
+       - conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/QS3hark.git
-       - git clone https://github.com/NHERI-SimCenter/PBE.git       
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git
        
     build_script:
-       # build SimCenterBackendApplications
-       - cd SimCenterBackendApplications
-       - chmod 'u+x' makeEXE.sh
-       - ./makeEXE.sh
-       - cd ..
-       
-       # build PBE
-       - cd PBE
+       # build quoFEM
+       - cd quoFEM
        - chmod 'u+x' makeEXE.sh
        - ls
        - ./makeEXE.sh
@@ -119,7 +91,6 @@ for:
     clone_folder: c:\projects\SimCenter
 
     init:
-       - cmd: blah
        - cmd: set PYTHON=C:\PYTHON38-x64
        - cmd: set PYTHONNET_PYDLL=%PYTHON%\python3.8.dll
        - cmd: set QT=C:\Qt\5.15.2\msvc2019_64\bin
@@ -131,22 +102,32 @@ for:
        - cmd: conan profile show default
        - cmd: conan profile update settings.compiler="Visual Studio" default
        - cmd: conan profile update settings.compiler.version="16" default
-       - cmd: conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter                     
+       - cmd: conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
        - cmd: echo %PATH%
 
     install:
-       - cmd: git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications.git
        - git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       - git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       - git clone https://github.com/NHERI-SimCenter/QS3hark.git
-       - git clone https://github.com/NHERI-SimCenter/PBE.git       
+       - git clone https://github.com/NHERI-SimCenter/quoFEM.git
        - cmd: dir
 
     build_script:
-      # build simcenter backend
-      - cmd: dir
-      - cmd: cd SimCenterBackendApplications
+      #
+      # build quoFEM
+      #
+
+      # first UI
+      - cmd: cd quoFEM
       - cmd: mkdir build
+      - cmd: cd build
+      - cmd: conan install .. --build missing
+      - cmd: qmake ..\quoFEM.pro
+      - cmd: nmake
+      - cmd: cd ..
+      
+      # now quoFEM backend
+      - cmd: cd backend
+      - cmd: mkdir build
+      - cmd: dir
       - cmd: cd build
       - cmd: conan install .. --build missing
       - cmd: cmake .. -G "Visual Studio 16 2019"
@@ -155,19 +136,7 @@ for:
       - cmd: cd ..
       - cmd: cd ..
 
-      #
-      # build PBE
-      #
-
-      # first UI
-      - cmd: cd PBE
-      - cmd: mkdir build
-      - cmd: cd build
-      - cmd: conan install .. --build missing
-      - cmd: qmake ..\PBE.pro
-      - cmd: nmake
       - cmd: cd ..
-      - cmd: cd ..      
 
     test_script:
       -cmd: python --version
