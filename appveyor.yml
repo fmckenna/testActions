@@ -5,7 +5,7 @@ image:
   - Ubuntu1804
   - Visual Studio 2019
 
-stack: python 3.7
+stack: python 3.8
 
 for:
   # macOS 
